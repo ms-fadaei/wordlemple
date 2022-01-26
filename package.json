@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite --port 3333 --open",
     "build": "vite build",
+    "generate": "vite-ssg build",
     "preview": "vite preview",
     "lint": "eslint . --ext=.ts,.vue --fix"
   },
@@ -20,6 +21,7 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/test-utils": "^2.0.0-rc.18",
+    "@vueuse/head": "^0.7.5",
     "eslint": "^8.6.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.3.0",
@@ -30,6 +32,7 @@
     "unocss": "^0.22.2",
     "unplugin-auto-import": "^0.5.10",
     "unplugin-vue-components": "^0.17.11",
-    "vite": "^2.7.12"
+    "vite": "^2.7.12",
+    "vite-ssg": "^0.17.9"
   }
 }

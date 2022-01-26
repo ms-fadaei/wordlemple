@@ -9,3 +9,17 @@
     <Footer />
   </main>
 </template>
+
+<script setup lang="ts">
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: 'Wordlemple',
+  meta: [
+    {
+      name: `description`,
+      content: `A simple implementation of the wordle game.`,
+    },
+  ],
+})
+</script>
