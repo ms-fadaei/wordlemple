@@ -9,7 +9,7 @@
       'letter-box--orange': canValidate && isInTheWord,
       'letter-box--disabled': canValidate && isNotThere,
     }"
-    @keypress="validateLetter"
+    @keydown="validateLetter"
   />
 </template>
 
@@ -32,14 +32,15 @@ const props = defineProps({
 const $emit = defineEmits(['update'])
 
 const value = ref<string>('')
-const isCorrect = computed(() => value.value === props.letter)
+const isCorrect = computed(() => value.value.toLowerCase() === props.letter.toLowerCase())
 const isInTheWord = computed(
-  () => !isCorrect.value && value.value && props.word.includes(value.value)
+  () =>
+    !isCorrect.value && value.value && props.word.toLowerCase().includes(value.value.toLowerCase())
 )
 const isNotThere = computed(() => !isCorrect.value && !isInTheWord.value)
 
 watch(value, () => {
-  $emit('update', value.value)
+  $emit('update', value.value.toLowerCase())
 })
 
 function validateLetter(e: KeyboardEvent) {

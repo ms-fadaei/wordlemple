@@ -25,7 +25,7 @@ const $props = defineProps({
 
 const currentRow = ref(1)
 const checkWord = (value: string, rowNumber: number) => {
-  if (value === $props.word) {
+  if (value === $props.word.toLowerCase()) {
     currentRow.value = 0
     alert('You win!')
   } else {
