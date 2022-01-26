@@ -9,6 +9,7 @@
       'letter-box--orange': canValidate && isInTheWord,
       'letter-box--disabled': canValidate && isNotThere
     }"
+    @keypress="validateLetter"
   >
 </template>
 
@@ -38,4 +39,11 @@ const isNotThere = computed(() => !isCorrect.value && !isInTheWord.value)
 watch(value, () => {
   $emit("update", value.value)
 })
+
+function validateLetter(e: KeyboardEvent) {
+  const keyCode = e.key.toLowerCase().charCodeAt(0);
+  if (keyCode < 97 || keyCode > 122 ) {
+    e.preventDefault()
+  }
+}
 </script>

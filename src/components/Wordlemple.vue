@@ -6,13 +6,14 @@
       :word="word"
       :is-active="i === currentRow"
       @next="currentRow = i + 1"
-      @win="winner"
+      @done="checkWord($event, i)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps({
+
+const $props = defineProps({
   word: {
     type: String,
     required: true,
@@ -24,8 +25,12 @@ defineProps({
 })
 
 const currentRow = ref(1)
-const winner = () => {
-  currentRow.value = 0;
-  alert('You win!')
+const checkWord = (value: string, rowNumber: number) => {
+  if (value === $props.word) {
+    currentRow.value = 0;
+    alert('You win!')
+  } else {
+    currentRow.value = rowNumber + 1;
+  }
 }
 </script>

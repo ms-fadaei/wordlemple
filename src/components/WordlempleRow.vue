@@ -14,7 +14,8 @@
       :letter="word[index - 1]"
       :word="word"
       :can-validate="isWordComplete"
-      @update="valueRefs[index -1 ] = $event"
+      @update="setValue($event, index - 1)"
+      @keydown="focusHandler($event, index - 1)"
     />
   </div>
 </template>
@@ -31,7 +32,7 @@ const props = defineProps({
   },
 })
 
-const $emit = defineEmits(['next', 'win'])
+const $emit = defineEmits(['done'])
 const box = ref<HTMLInputElement | null>(null)
 
 const wordLength = computed(() => props.word.length)
@@ -49,25 +50,26 @@ watchEffect(() => {
 
 watch(completeValue, () => {
   if (completeValue.value.length === wordLength.value) {
-    checkWord()
+    $emit('done', completeValue.value)
   }
 })
 
-const checkWord = () => {
+const setValue = (value: string, index: number) => {
+  valueRefs.value[index] = value
+
   const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
-  let greenWords = 0
+  if (value && index < wordLength.value - 1) {
+    inputs[index + 1].focus();
+  }
+}
 
-  inputs.forEach((input: HTMLInputElement, index: number) => {
-    if (input.value === props.word[index]) {
-      greenWords++
+const focusHandler = (e: KeyboardEvent, index: number) => {
+  if (e.key === "Backspace" && valueRefs.value[index] === "") {
+    const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
+    if (index > 0) {
+      inputs[index - 1].focus();
+      e.preventDefault();
     }
-  })
-
-
-  if (greenWords === props.word.length) {
-    $emit('win')
-  } else {
-    $emit('next')
   }
 }
 </script>
