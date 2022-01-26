@@ -47,7 +47,7 @@ export default defineConfig({
         ],
         [
           'letter-box--orange',
-          'bg-orange-200 dark:bg-orange-600 border-orange-400 dark:border-orange-500',
+          'bg-orange-200 dark:bg-yellow-700 border-orange-400 dark:border-orange-500',
         ],
         [
           'letter-box--disabled',
