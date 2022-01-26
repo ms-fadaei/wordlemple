@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-
 const $props = defineProps({
   word: {
     type: String,
@@ -27,10 +26,10 @@ const $props = defineProps({
 const currentRow = ref(1)
 const checkWord = (value: string, rowNumber: number) => {
   if (value === $props.word) {
-    currentRow.value = 0;
+    currentRow.value = 0
     alert('You win!')
   } else {
-    currentRow.value = rowNumber + 1;
+    currentRow.value = rowNumber + 1
   }
 }
 </script>

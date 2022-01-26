@@ -5,12 +5,7 @@
     un-bg="gray-50 dark:gray-900"
     un-text="gray-700 dark:gray-200"
   >
-    <Wordlemple
-      word="ticket"
-      :tries="5"
-      class="p-4 rounded-2"
-      un-bg="gray-100 dark:gray-800"
-    />
+    <Wordlemple word="ticket" :tries="5" class="p-4 rounded-2" un-bg="gray-100 dark:gray-800" />
     <Footer />
   </main>
 </template>
