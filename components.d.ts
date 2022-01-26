@@ -4,8 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Counter: typeof import('./src/components/Counter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    Wordlemple: typeof import('./src/components/Wordlemple.vue')['default']
+    WordlempleRow: typeof import('./src/components/WordlempleRow.vue')['default']
+    WordlempleRowInput: typeof import('./src/components/WordlempleRowInput.vue')['default']
   }
 }
 
