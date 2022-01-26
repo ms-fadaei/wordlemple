@@ -5,9 +5,9 @@
     maxlength="1"
     class="letter-box"
     :class="{
-      'letter-box--green': isCorrect,
-      'letter-box--orange': isInTheWord,
-      'letter-box--disabled': isNotThere
+      'letter-box--green': canValidate && isCorrect,
+      'letter-box--orange': canValidate && isInTheWord,
+      'letter-box--disabled': canValidate && isNotThere
     }"
   >
 </template>
@@ -31,9 +31,9 @@ const props = defineProps({
 const $emit = defineEmits(['update'])
 
 const value = ref<string>('')
-const isCorrect = computed(() => props.canValidate && value.value === props.letter)
-const isInTheWord = computed(() => props.canValidate && !isCorrect.value && value.value && props.word.includes(value.value))
-const isNotThere = computed(() => props.canValidate && !isCorrect.value && !isInTheWord.value)
+const isCorrect = computed(() => value.value === props.letter)
+const isInTheWord = computed(() => !isCorrect.value && value.value && props.word.includes(value.value))
+const isNotThere = computed(() => !isCorrect.value && !isInTheWord.value)
 
 watch(value, () => {
   $emit("update", value.value)
