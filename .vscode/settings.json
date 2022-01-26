@@ -1,5 +1,8 @@
 {
-  "cSpell.words": ["Vitesse"],
+  "cSpell.words": [
+    "Vitesse",
+    "Wordlemple"
+  ],
   "prettier.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
@@ -8,4 +11,5 @@
   "files.associations": {
     "*.css": "postcss",
   },
+  "editor.tabSize": 2,
 }
