@@ -64,7 +64,8 @@ const setValue = (value: string, index: number) => {
 }
 
 const focusHandler = (e: KeyboardEvent, index: number) => {
-  if (e.key === 'Backspace' && valueRefs.value[index] === '') {
+  console.log(e)
+  if ((e.key === 'Backspace' || e.which === 8) && valueRefs.value[index] === '') {
     const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
     if (index > 0) {
       inputs[index - 1].focus()

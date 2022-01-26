@@ -44,7 +44,8 @@ watch(value, () => {
 })
 
 function validateLetter(e: KeyboardEvent) {
-  const keyCode = e.key.toLowerCase().charCodeAt(0)
+  console.log(e)
+  const keyCode = e.key.toLowerCase().charCodeAt(0) || e.which
   if (keyCode < 97 || keyCode > 122) {
     e.preventDefault()
   }
