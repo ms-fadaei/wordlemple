@@ -13,39 +13,39 @@
   "index.html": [],
   "assets/app.dffe97a7.js-unocss-hash.css": [],
   "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vueuse/head/dist/index.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/vite-ssg/dist/chunks/state.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/vite-ssg/dist/client/single-page.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vueuse/core/node_modules/vue-demi/lib/index.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vueuse/core/node_modules/@vueuse/shared/index.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ],
   "node_modules/@vueuse/core/index.mjs": [
-    "/assets/vendor.a69ace03.js"
+    "https://ms-fadaei.github.io/wordlemple/assets/vendor.a69ace03.js"
   ]
 }
