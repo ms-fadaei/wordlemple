@@ -65,7 +65,6 @@ const setValue = (value: string, index: number) => {
 
 const focusHandler = (e: Event, index: number) => {
   if (e instanceof InputEvent && e.inputType) {
-    console.log(e)
     if (e.inputType === 'deleteContentBackward' && valueRefs.value[index] === '') {
       const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
       if (index > 0) {

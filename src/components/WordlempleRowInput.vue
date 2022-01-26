@@ -44,19 +44,15 @@ watch(value, () => {
 })
 
 function setValue(e: Event) {
+  console.log(e)
   const _value = (e.target as HTMLInputElement).value
   const keyCode = _value.toLowerCase().charCodeAt(0)
   if (keyCode >= 97 && keyCode <= 122) {
     value.value = _value
   } else if (_value === '') {
     value.value = ''
+  } else {
+    ;(e.target as HTMLInputElement).value = ''
   }
 }
-
-// function validateLetter(e: KeyboardEvent) {
-//   const keyCode = e.key.toLowerCase().charCodeAt(0)
-//   if (keyCode < 97 || keyCode > 122) {
-//     e.preventDefault()
-//   }
-// }
 </script>
