@@ -5,13 +5,14 @@
   "src/components/WordlempleRowInput.vue": [],
   "src/components/WordlempleRow.vue": [],
   "src/components/Wordlemple.vue": [],
+  "src/services/data.js": [],
   "src/App.vue": [],
   "node_modules/@unocss/reset/tailwind.css": [],
   "src/styles/main.css": [],
   "../../../../../__uno.css": [],
   "src/main.ts": [],
   "index.html": [],
-  "assets/app.1bfe8286.js-unocss-hash.css": [],
+  "assets/app.1331ef98.js-unocss-hash.css": [],
   "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
     "https://ms-fadaei.github.io/wordlemple/assets/vendor.383b9236.js"
   ],
