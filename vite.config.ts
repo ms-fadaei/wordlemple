@@ -63,4 +63,11 @@ export default defineConfig({
       ],
     }),
   ],
+  base: 'https://ms-fadaei.github.io/wordlemple/',
+
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+  },
 })
