@@ -15,7 +15,7 @@
       :word="word"
       :can-validate="isWordComplete"
       @update="setValue($event, index - 1)"
-      @keydown="focusHandler($event, index - 1)"
+      @beforeinput="focusHandler($event, index - 1)"
     />
   </div>
 </template>
@@ -63,12 +63,15 @@ const setValue = (value: string, index: number) => {
   }
 }
 
-const focusHandler = (e: KeyboardEvent, index: number) => {
-  if (e.key === 'Backspace' && valueRefs.value[index] === '') {
-    const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
-    if (index > 0) {
-      inputs[index - 1].focus()
-      e.preventDefault()
+const focusHandler = (e: Event, index: number) => {
+  if (e instanceof InputEvent && e.inputType) {
+    console.log(e)
+    if (e.inputType === 'deleteContentBackward' && valueRefs.value[index] === '') {
+      const inputs = box.value?.querySelectorAll('input') as NodeListOf<HTMLInputElement>
+      if (index > 0) {
+        inputs[index - 1].focus()
+        e.preventDefault()
+      }
     }
   }
 }

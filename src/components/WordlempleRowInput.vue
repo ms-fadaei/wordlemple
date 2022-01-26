@@ -1,6 +1,6 @@
 <template>
   <input
-    v-model="value"
+    :value="value"
     type="text"
     maxlength="1"
     class="letter-box"
@@ -9,7 +9,7 @@
       'letter-box--orange': canValidate && isInTheWord,
       'letter-box--disabled': canValidate && isNotThere,
     }"
-    @keydown="validateLetter"
+    @input="setValue"
   />
 </template>
 
@@ -43,10 +43,20 @@ watch(value, () => {
   $emit('update', value.value.toLowerCase())
 })
 
-function validateLetter(e: KeyboardEvent) {
-  const keyCode = e.key.toLowerCase().charCodeAt(0)
-  if (keyCode < 97 || keyCode > 122) {
-    e.preventDefault()
+function setValue(e: Event) {
+  const _value = (e.target as HTMLInputElement).value
+  const keyCode = _value.toLowerCase().charCodeAt(0)
+  if (keyCode >= 97 && keyCode <= 122) {
+    value.value = _value
+  } else if (_value === '') {
+    value.value = ''
   }
 }
+
+// function validateLetter(e: KeyboardEvent) {
+//   const keyCode = e.key.toLowerCase().charCodeAt(0)
+//   if (keyCode < 97 || keyCode > 122) {
+//     e.preventDefault()
+//   }
+// }
 </script>
