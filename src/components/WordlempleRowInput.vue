@@ -44,7 +44,6 @@ watch(value, () => {
 })
 
 function setValue(e: Event) {
-  console.log(e)
   const _value = (e.target as HTMLInputElement).value
   const keyCode = _value.toLowerCase().charCodeAt(0)
   if (keyCode >= 97 && keyCode <= 122) {
