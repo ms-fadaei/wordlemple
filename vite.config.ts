@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
@@ -19,7 +17,7 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core', 'vitest'],
+      imports: ['vue', 'vue-router', '@vueuse/core'],
       dts: true,
     }),
 
@@ -65,9 +63,4 @@ export default defineConfig({
       ],
     }),
   ],
-
-  // https://github.com/vitest-dev/vitest
-  test: {
-    environment: 'jsdom',
-  },
 })
