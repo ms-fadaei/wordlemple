@@ -24,9 +24,9 @@ const currentRow = ref(1)
 const checkWord = (value: string, rowNumber: number) => {
   if (value === $props.word.toLowerCase()) {
     currentRow.value = 0
-    nextTick(() => {
+    setTimeout(() => {
       alert('You Won!')
-    })
+    }, 100)
   } else {
     currentRow.value = rowNumber + 1
   }
