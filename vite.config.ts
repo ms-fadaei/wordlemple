@@ -1,12 +1,11 @@
 import path from 'path'
-import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
 
-export default defineConfig({
+export default {
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -70,4 +69,4 @@ export default defineConfig({
     script: 'async',
     formatting: 'minify',
   },
-})
+}
