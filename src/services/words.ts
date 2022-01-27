@@ -1,4 +1,4 @@
-export function getRandomWord() {
+export function getRandomWord(): string {
   const samples = [
     'ticket',
     'handle',
@@ -8,7 +8,7 @@ export function getRandomWord() {
     'phone',
     'truck',
     'screen',
-    'strock',
+    'stroke',
     'police',
     'sport',
     'socket',

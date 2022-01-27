@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
-import { getRandomWord } from './services/data.js'
+import { getRandomWord } from '~/services/words'
 
 useHead({
   title: 'Wordlemple',
