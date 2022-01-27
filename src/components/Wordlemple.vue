@@ -5,7 +5,6 @@
       :key="i"
       :word="word"
       :is-active="i === currentRow"
-      @next="currentRow = i + 1"
       @done="checkWord($event, i)"
     />
   </div>
