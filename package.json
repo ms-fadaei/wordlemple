@@ -1,5 +1,20 @@
 {
-  "private": true,
+  "name": "wordlemple",
+  "version": "1.0.0",
+  "description": "A simple implementation of the Wordle game.",
+  "repository": "ms-fadaei/wordlemple",
+  "license": "MIT",
+  "keywords": [
+    "game",
+    "vue",
+    "wordle",
+    "vitesse"
+  ],
+  "author": {
+    "name": "Mohammad Saleh Fadaei",
+    "email": "ms.fadaei1997@gmail.com",
+    "url": "https://twitter.com/ms_fadaei"
+  },
   "scripts": {
     "dev": "vite --port 3333 --open",
     "build": "vite build",
