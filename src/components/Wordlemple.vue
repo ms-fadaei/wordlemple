@@ -5,29 +5,19 @@
       :key="i"
       :word="word"
       :is-active="i === currentRow"
-      @done="checkWord($event, i)"
+      @done="validateWord($event, i)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
+import { initWordlemple } from '~/composables'
+
 const $props = defineProps<{
   word: string
   tries: number
 }>()
 
-// current row index
-const currentRow = ref(1)
-
-// check word on each completed row
-const checkWord = (value: string, rowNumber: number) => {
-  if (value === $props.word.toLowerCase()) {
-    currentRow.value = 0
-    setTimeout(() => {
-      alert('You Won!')
-    }, 100)
-  } else {
-    currentRow.value = rowNumber + 1
-  }
-}
+const { word } = toRefs($props)
+const { currentRow, validateWord } = initWordlemple(word)
 </script>

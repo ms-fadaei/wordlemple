@@ -13,6 +13,8 @@
 </template>
 
 <script setup lang="ts">
+import { useWordlempleRowInput } from '~/composables'
+
 // define props
 const $props = defineProps<{
   letter: string
@@ -20,33 +22,9 @@ const $props = defineProps<{
   canValidate: boolean
 }>()
 
-// define emits
 const $emit = defineEmits(['update'])
+const onUpdate = (letter: string) => $emit('update', letter)
 
-// define input value ref
-const value = ref<string>('')
-
-// define status computed properties
-const isCorrect = computed(() => value.value === $props.letter.toLowerCase())
-const isPresent = computed(
-  () => !isCorrect.value && value.value && $props.word.toLowerCase().includes(value.value)
-)
-const isWrong = computed(() => !isCorrect.value && !isPresent.value)
-
-// input value watcher to emit update event
-watch(value, () => {
-  $emit('update', value.value)
-})
-
-// validate (and then set) entered value
-function setValue(e: Event) {
-  const _value = (e.target as HTMLInputElement).value
-  const keyCode = _value.toLowerCase().charCodeAt(0)
-  if (keyCode >= 97 && keyCode <= 122) {
-    value.value = _value.toLowerCase()
-  } else {
-    ;(e.target as HTMLInputElement).value = ''
-    value.value = ''
-  }
-}
+const { letter, word } = toRefs($props)
+const { isCorrect, isPresent, isWrong, setValue } = useWordlempleRowInput(letter, word, onUpdate)
 </script>
